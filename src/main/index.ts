@@ -6,11 +6,19 @@ import icon from '../../resources/icon.png?asset'
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 900,
-    height: 670,
+    width: 1024,
+    minWidth: 1024,
+    height: 648,
+    minHeight: 648,
+
     show: false,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
+    center: true,
+    title: 'MLS Launcher',
+    //frame: false,
+    backgroundMaterial: 'auto',
+    backgroundColor: '#242121',
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
