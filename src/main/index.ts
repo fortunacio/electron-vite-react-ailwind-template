@@ -16,9 +16,9 @@ function createWindow(): void {
     ...(process.platform === 'linux' ? { icon } : {}),
     center: true,
     title: 'MLS Launcher',
-    //frame: false,
-    backgroundMaterial: 'auto',
-    backgroundColor: '#242121',
+    frame: false,
+    //backgroundMaterial: 'acrylic',
+    //backgroundColor: '#242121',
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
       sandbox: true,
