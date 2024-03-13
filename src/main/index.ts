@@ -1,3 +1,4 @@
+import { closeWindow, maximizeWindows, minimizeWindows } from '@/lib'
 import { electronApp, is, optimizer } from '@electron-toolkit/utils'
 import { BrowserWindow, app, ipcMain, shell } from 'electron'
 import { join } from 'path'
@@ -68,6 +69,10 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
+  ipcMain.on('minimize-window', () => { minimizeWindows() })
+  ipcMain.on('maximize-window', () => { maximizeWindows() })
+  ipcMain.on('close-window', () => { closeWindow() })
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
