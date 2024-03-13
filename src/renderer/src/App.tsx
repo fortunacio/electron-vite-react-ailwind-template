@@ -1,14 +1,14 @@
-import { ActionButtonsRow, Content, DraggableTopBar, RootLayout, Sidebar } from '@/components'
+import { Content, DraggableTopBar, RootLayout, Sidebar } from '@/components'
 
 const App = () => {
   return (
     <>
-    <DraggableTopBar/>
+    <DraggableTopBar className= "bg-zinc-800"/>
     <RootLayout>
-      <Sidebar className=' bg-zinc-700'>
-        <ActionButtonsRow className='flex justify-between mt-1' />
+      <Sidebar className=' bg-zinc-800'>
+        {/* <ActionButtonsRow className='flex justify-between mt-1' /> */}
       </Sidebar>
-      <Content className="border-l bg-zinc-800 border-l-white/30">Content</Content>
+      <Content className="border-l bg-zinc-700 border-l-white/30">Content</Content>
     </RootLayout>
     </>
   )

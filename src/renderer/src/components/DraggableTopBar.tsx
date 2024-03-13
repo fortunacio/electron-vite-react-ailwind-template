@@ -1,9 +1,11 @@
 import { ActionButton } from "@/components";
 import { FiMinus, FiSquare, FiX } from 'react-icons/fi';
+import { twMerge } from 'tailwind-merge';
 
-export const DraggableTopBar = () => {
+
+export const DraggableTopBar = ({className, ...props}) => {
     return (
-        <header className="flex justify-end absolute inset-0 h-8 bg-transparent space-x-1">
+        <header className={twMerge("flex justify-end absolute inset-0 h-8 bg-transparent space-x-1", className)} {...props}>
             <ActionButton className="border-none" onClick={() => window.context.minimize()}>
                 <FiMinus className="text-white"/>
             </ActionButton>
